@@ -3,6 +3,7 @@
 
 import React, { useState } from "react";
 import { Audiowide } from "next/font/google";
+import { ArrowRightIcon } from "@heroicons/react/24/solid";
 const audiowide = Audiowide({
   subsets: ["latin"],
   weight: "400",
@@ -79,6 +80,7 @@ const GPTBuddy: React.FC = () => {
           display: "flex",
           flexDirection: "row",
           justifyContent: "center",
+          alignItems: "center",
         }}
       >
         <textarea
@@ -93,7 +95,7 @@ const GPTBuddy: React.FC = () => {
             padding: "0.5em",
             fontSize: "1em",
             width: "80%",
-            maxHeight: "10em",
+            maxHeight: "3em",
             minHeight: "3em",
             outlineColor: "#f87171",
           }}
@@ -107,9 +109,9 @@ const GPTBuddy: React.FC = () => {
             backgroundColor: "#f87171",
             border: "gray",
           }}
-          className="rounded-md bg-red-400 hover:bg-red-500 active:bg-red-600 focus:outline-none text-white py-2 px-4 rounded transition-transform duration-200 ease-in-out transform hover:scale-105 active:scale-95 shadow-md hover:shadow-lg"
+          className="m-2 rounded-md bg-red-400 hover:bg-red-500 active:bg-red-600 focus:outline-none text-white py-2 px-4 rounded transition-transform duration-200 ease-in-out transform hover:scale-105 active:scale-95 shadow-md hover:shadow-lg"
         >
-          {loading ? "Thinking..." : "Send"}
+          {loading ? "Thinking..." : <ArrowRightIcon className="h-7 w-7" />}
         </button>
       </form>
       {error && <p className="error">{error}</p>}
